@@ -77,3 +77,23 @@ function deleteIt(id, e) {
 function deleteFromList(e) {
   e.target.parentElement.remove();
 }
+
+//edit/update data - PUT
+
+function put() {
+  const payload = {
+    name: "Brand new name",
+  };
+  const id = "617695b67b91b61a000ab4e5";
+
+  fetch(url + `/${id}`, {
+    method: "put",
+    body: JSON.stringify(payload),
+    headers: headers,
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+    });
+  get();
+}
