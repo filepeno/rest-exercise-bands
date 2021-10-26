@@ -24,4 +24,13 @@ function start() {
 
 function showData(data) {
   console.log(data);
+  data.forEach((band) => {
+    const template = document.querySelector("template").content;
+    const clone = template.cloneNode(true);
+    clone.querySelector("h1").textContent = band.name;
+    clone.querySelector(`[data-type="genre"]`).textContent = band.genre;
+    clone.querySelector(`[data-type="year"]`).textContent = band.year;
+    const parent = document.querySelector("body");
+    parent.appendChild(clone);
+  });
 }
