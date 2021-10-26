@@ -1,17 +1,19 @@
 "use strict";
 
-window.addEventListener("DOMContentLoaded", start);
+window.addEventListener("DOMContentLoaded", get);
 
-function start() {
-  const url = "https://keafs-8b71.restdb.io/rest/bands";
+const url = "https://keafs-8b71.restdb.io/rest/bands";
+const headers = {
+  "x-apikey": "602e39f15ad3610fb5bb62c6",
+  Accept: "application/json",
+  "Content-Type": "application/json",
+  "cache-control": "no-cache",
+};
 
+function get() {
   fetch(url, {
     method: "get",
-    headers: {
-      "x-apikey": "602e39f15ad3610fb5bb62c6",
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
+    headers: headers,
   })
     .then((res) => res.json())
     .then((data) => {
@@ -24,13 +26,54 @@ function start() {
 
 function showData(data) {
   console.log(data);
+  const parent = document.querySelector("section#bands");
+  parent.innerHTML = "";
   data.forEach((band) => {
     const template = document.querySelector("template").content;
     const clone = template.cloneNode(true);
     clone.querySelector("h1").textContent = band.name;
     clone.querySelector(`[data-type="genre"]`).textContent = band.genre;
     clone.querySelector(`[data-type="year"]`).textContent = band.year;
-    const parent = document.querySelector("section#bands");
+    clone.querySelector("button").addEventListener("click", (e) => {
+      deleteIt(band._id);
+      deleteFromList(e);
+    });
     parent.appendChild(clone);
   });
+}
+
+//posting data
+function post() {
+  const payload = {
+    name: "New band",
+    genre: "pop",
+    year: 1900,
+  };
+  fetch(url, {
+    method: "post",
+    body: JSON.stringify(payload),
+    headers: headers,
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+    });
+  get();
+}
+
+//deleting data
+function deleteIt(id, e) {
+  fetch(url + `/${id}`, {
+    method: "delete",
+    headers: headers,
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+    });
+}
+
+//update view without deleted band
+function deleteFromList(e) {
+  e.target.parentElement.remove();
 }
