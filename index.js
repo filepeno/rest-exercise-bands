@@ -30,7 +30,7 @@ function showData(data) {
     clone.querySelector("h1").textContent = band.name;
     clone.querySelector(`[data-type="genre"]`).textContent = band.genre;
     clone.querySelector(`[data-type="year"]`).textContent = band.year;
-    const parent = document.querySelector("body");
+    const parent = document.querySelector("section#bands");
     parent.appendChild(clone);
   });
 }

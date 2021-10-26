@@ -8,6 +8,11 @@ body {
   font-family: system-ui;
 }
 
+section#bands {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
 ul {
   list-style: none;
 }
