@@ -31,7 +31,7 @@ function showData(data) {
   data.forEach((band) => {
     const template = document.querySelector("template").content;
     const clone = template.cloneNode(true);
-    clone.querySelector("h1").textContent = band.name;
+    clone.querySelector(`[data-type="name"]`).textContent = band.name;
     clone.querySelector(`[data-type="genre"]`).textContent = band.genre;
     clone.querySelector(`[data-type="year"]`).textContent = band.year;
     clone.querySelector("button").addEventListener("click", (e) => {
