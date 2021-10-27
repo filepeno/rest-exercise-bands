@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bands</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <header>
@@ -16,20 +16,19 @@
       <p>Here you can add a new band to the list.</p>
       <form action="index.html" method="post">
         <label for="band-name">Band name</label>
-        <input type="text" name="band-name" id="band-name">
+        <input type="text" name="band-name" id="band-name" />
         <label for="year">Year of establishment</label>
-        <input type="number" name="year" id="year">
+        <input type="number" name="year" id="year" />
         <div>
-          <input type="radio" id="active" name="activity" value="active"
-                 checked>
+          <input type="radio" id="active" name="activity" value="active" checked />
           <label for="active">Active</label>
         </div>
         <div>
-            <input type="radio" id="not-active" name="activity" value="not-active">
-            <label for="not-active">Not active</label>
+          <input type="radio" id="not-active" name="activity" value="not-active" />
+          <label for="not-active">Not active</label>
         </div>
         <label for="country">Country of origin</label>
-        <input type="text" name="country" id="country">
+        <input type="text" name="country" id="country" />
         <label for="description">Description</label>
         <textarea id="description"></textarea>
       </form>
@@ -40,12 +39,12 @@
         <h3><span data-type="name"> - </span></h3>
         <ul>
           <li>Genre(s): <span data-type="genre"> - </span></li>
-          <li>Frontman:<span data-type="frontman">  - </span</li>
-          <li>Year of establishment: <span data-type="year">  -  </span</li>
+          <li>Frontman:<span data-type="frontman"> - </span></li>
+          <li>Year of establishment: <span data-type="year"> - </span></li>
           <li>Description:</li>
-          <li>Fun fact:<span data-type="fun"> - </span</li>
+          <li>Fun fact:<span data-type="fun"> - </span></li>
         </ul>
-        <p data-type="description"> - </p>
+        <p data-type="description">-</p>
         <button>Delete</button>
       </article>
     </template>
