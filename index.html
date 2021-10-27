@@ -9,12 +9,35 @@
   </head>
   <body>
     <header>
-      <h1>List of bands</h1>
+      <h1>Some random bands</h1>
     </header>
+    <section id="form">
+      <h2>New band</h2>
+      <p>Here you can add a new band to the list.</p>
+      <form action="index.html" method="post">
+        <label for="band-name">Band name</label>
+        <input type="text" name="band-name" id="band-name">
+        <label for="year">Year of establishment</label>
+        <input type="number" name="year" id="year">
+        <div>
+          <input type="radio" id="active" name="activity" value="active"
+                 checked>
+          <label for="active">Active</label>
+        </div>
+        <div>
+            <input type="radio" id="not-active" name="activity" value="not-active">
+            <label for="not-active">Not active</label>
+        </div>
+        <label for="country">Country of origin</label>
+        <input type="text" name="country" id="country">
+        <label for="description">Description</label>
+        <textarea id="description"></textarea>
+      </form>
+    </section>
     <section id="bands"></section>
     <template>
       <article>
-        <h2><span data-type="name"> - </span></h2>
+        <h3><span data-type="name"> - </span></h3>
         <ul>
           <li>Genre(s): <span data-type="genre"> - </span></li>
           <li>Frontman:<span data-type="frontman">  - </span</li>
