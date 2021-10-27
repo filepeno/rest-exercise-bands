@@ -22,6 +22,12 @@ section#form {
   align-items: center;
 }
 
+form > * {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
 form {
   margin: 2rem;
   display: flex;
