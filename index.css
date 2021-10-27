@@ -23,6 +23,8 @@ header h1 {
   margin: 2rem auto;
 }
 
+/* FORM */
+
 section#form {
   /* background: rgb(58, 58, 58); */
   padding: 2rem;
@@ -44,7 +46,7 @@ form {
   flex-direction: column; */
 }
 
-/* labels */
+/* ----labels----- */
 label {
   margin-bottom: 2px;
 }
@@ -72,6 +74,13 @@ input[type="number"] {
 
 fieldset {
   padding: 1rem;
+}
+
+/* -----buttons----- */
+button#add-genre {
+  width: 2rem;
+  margin-top: 2px;
+  align-self: end;
 }
 
 /* ----bands-list---- */
