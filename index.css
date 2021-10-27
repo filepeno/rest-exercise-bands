@@ -88,15 +88,34 @@ button#add-genre {
 section#bands {
   padding: 2rem;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+section#bands > article {
+  margin: 0 auto;
 }
 
 ul {
   list-style: none;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 700px) {
   main {
+    grid-template-columns: 1fr;
+  }
+
+  section#bands {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  section#bands {
     grid-template-columns: 1fr;
   }
 }
