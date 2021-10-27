@@ -16,7 +16,7 @@
       <p>Here you can add a new band to the list.</p>
       <form action="index.html" method="post">
         <label for="band-name">Band name</label>
-        <input type="text" name="band-name" id="band-name" />
+        <input type="text" name="band-name" id="band-name" required />
         <label for="year">Year of establishment</label>
         <input type="number" name="year" id="year" />
         <div>
@@ -29,8 +29,8 @@
         </div>
         <label for="country">Country of origin</label>
         <input type="text" name="country" id="country" />
-        <label for="description">Description</label>
-        <textarea id="description"></textarea>
+        <label for="description">Description (max. 200 characters)</label>
+        <textarea id="description" name="description" maxlength="200"></textarea>
       </form>
     </section>
     <section id="bands"></section>
