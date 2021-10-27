@@ -8,15 +8,23 @@ body {
   font-family: system-ui;
 }
 
+main {
+  display: grid;
+  grid-template-columns: 1fr 33%;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
 header h1 {
   width: 30vw;
   text-align: center;
-  margin: 0 auto;
+  margin: 2rem auto;
 }
 
 section#form {
-  width: 45vw;
-  margin: 2rem auto 0 auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,10 +43,17 @@ form {
 }
 
 section#bands {
+  padding: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 ul {
   list-style: none;
+}
+
+@media screen and (max-width: 550px) {
+  main {
+    grid-template-columns: 1fr;
+  }
 }

@@ -11,40 +11,42 @@
     <header>
       <h1>Some random bands</h1>
     </header>
-    <section id="form">
-      <h2>New band</h2>
-      <p>Here you can add a new band to the list.</p>
-      <form action="index.html" method="post">
-        <div>
-          <label for="band-name">Band name</label>
-          <input type="text" name="band-name" id="band-name" required />
-        </div>
-        <div>
-          <label for="year">Year of establishment</label>
-          <input type="number" name="year" id="year" />
-        </div>
-        <fieldset>
-          <legend>Band activity</legend>
+    <main>
+      <section id="bands"></section>
+      <section id="form">
+        <h2>Add a band</h2>
+        <p>Here you can add a new band to the list.</p>
+        <form action="index.html" method="post">
           <div>
-            <input type="radio" id="active" name="activity" value="active" checked />
-            <label for="active">Active</label>
+            <label for="band-name">Band name</label>
+            <input type="text" name="band-name" id="band-name" required />
           </div>
           <div>
-            <input type="radio" id="not-active" name="activity" value="not-active" />
-            <label for="not-active">Not active</label>
+            <label for="year">Year of establishment</label>
+            <input type="number" name="year" id="year" />
           </div>
-        </fieldset>
-        <div>
-          <label for="country">Country of origin</label>
-          <input type="text" name="country" id="country" />
-        </div>
-        <div>
-          <label for="description">Description (max. 200 characters)</label>
-          <textarea id="description" name="description" maxlength="200"></textarea>
-        </div>
-      </form>
-    </section>
-    <section id="bands"></section>
+          <fieldset>
+            <legend>Band activity</legend>
+            <div>
+              <input type="radio" id="active" name="activity" value="active" checked />
+              <label for="active">Active</label>
+            </div>
+            <div>
+              <input type="radio" id="not-active" name="activity" value="not-active" />
+              <label for="not-active">Not active</label>
+            </div>
+          </fieldset>
+          <div>
+            <label for="country">Country of origin</label>
+            <input type="text" name="country" id="country" />
+          </div>
+          <div>
+            <label for="description">Description (max. 200 characters)</label>
+            <textarea id="description" name="description" maxlength="200"></textarea>
+          </div>
+        </form>
+      </section>
+    </main>
     <template>
       <article>
         <h3><span data-type="name"> - </span></h3>
