@@ -71,14 +71,14 @@
     <template>
       <article>
         <h3><span data-type="name"> - </span></h3>
-        <ul>
-          <li>Genre(s): <span data-type="genre"> - </span></li>
-          <li>Frontman:<span data-type="frontman"> - </span></li>
-          <li>Year of establishment: <span data-type="year"> - </span></li>
-          <li>Description:</li>
-          <li>Fun fact:<span data-type="fun"> - </span></li>
-        </ul>
-        <p data-type="description">-</p>
+        <h4>Status: <span data-type="status">active</span></h4>
+        <div id="genres"></div>
+        <div id="facts">
+          <h4>Facts</h4>
+          <p><span data-type="year"></span> <span data-type="country"></span></p>
+          <h5>Members</h5>
+          <ul id="members"></ul>
+        </div>
         <button>Delete</button>
       </article>
     </template>

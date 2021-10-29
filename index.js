@@ -18,10 +18,10 @@ function get() {
     .then((res) => res.json())
     .then((data) => {
       showData(data);
-    })
-    .catch((err) => {
-      console.error(err);
     });
+  // .catch((err) => {
+  //   console.error(err);
+  // });
 }
 
 function showData(data) {
@@ -32,8 +32,45 @@ function showData(data) {
     const template = document.querySelector("template").content;
     const clone = template.cloneNode(true);
     clone.querySelector(`[data-type="name"]`).textContent = band.name;
-    clone.querySelector(`[data-type="genre"]`).textContent = band.genre;
-    clone.querySelector(`[data-type="year"]`).textContent = band.year;
+    //status
+    if (band.active === true) {
+      clone.querySelector(`[data-type="status"]`).textContent = "active";
+    } else if (band.active === false) {
+      clone.querySelector(`[data-type="status"]`).textContent = "not-active";
+    } else {
+      clone.querySelector(`[data-type="status"]`).textContent = "unknown";
+    }
+    //genres
+    if (band.genre) {
+      const genresTotal = band.genre.length;
+      for (let i = 0; i < genresTotal; i++) {
+        const newDiv = document.createElement("div");
+        const divContent = document.createTextNode(band.genre[i]);
+        newDiv.appendChild(divContent);
+        clone.querySelector("div#genres").appendChild(newDiv);
+      }
+    }
+    //year
+    if (band.year) {
+      clone.querySelector(`[data-type="year"]`).textContent = `Founded in ${band.year}.`;
+    } else {
+      clone.querySelector(`[data-type="year"]`).remove();
+    }
+    //country
+    if (band.country) {
+      clone.querySelector(`[data-type="country"]`).textContent = `Originated in ${band.country}.`;
+    } else {
+      clone.querySelector(`[data-type="country"]`).remove();
+    }
+    if (band.members) {
+      const membersTotal = band.members.length;
+      for (let i = 0; i < membersTotal; i++) {
+        const newLi = document.createElement("li");
+        const liContent = document.createTextNode(band.members[i]);
+        newLi.appendChild(liContent);
+        clone.querySelector("ul#members").appendChild(newLi);
+      }
+    }
     clone.querySelector("button").addEventListener("click", (e) => {
       deleteIt(band._id);
       deleteFromList(e);
@@ -45,9 +82,8 @@ function showData(data) {
 //posting data
 function post() {
   const payload = {
-    name: "New band",
-    genre: "pop",
-    year: 1900,
+    name: "Just a band",
+    genre: ["rock", "punk", "new wave", "folk"],
   };
   fetch(url, {
     method: "post",
